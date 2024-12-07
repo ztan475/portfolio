@@ -1,0 +1,68 @@
+/* Fonts */
+@font-face {
+    font-family: "Ahellya";
+    src: url("../fonts/Ahellya.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Ahellya_Italic";
+    src: url("../fonts/Ahellya-Italic.ttf") format("truetype");
+}
+
+/* left column */
+nav {
+    width: 175px;
+    height: 100vh;
+    background-color: #6a8792;
+    position: fixed;
+    display: flex;
+    flex-direction: column; 
+    padding: 0;
+}
+
+nav .side_menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav .side_menu li {
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* groups */
+nav .side_menu li a {
+    font-family: "Ahellya", sans-serif;
+    color: white;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+nav .side_menu li a:hover {
+    font-family: "Ahellya_Italic", sans-serif;
+    color: #007a06;
+}
+
+/* name */
+nav .side_menu li b {
+    font-family: "Ahellya", sans-serif;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+}
+
+/* underline current page*/
+nav .side_menu li a.active {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}

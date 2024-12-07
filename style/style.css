@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "Ahellya";
+    src: url("../fonts/Ahellya.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Ahellya_Italic";
+    src: url("../fonts/Ahellya-Italic.ttf") format("truetype");
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    margin-left: 175px;
+}
+
+/* list style */
+.content_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.content_list li {
+    margin-bottom: 15px;
+    text-decoration: underline;
+    text-decoration-color: #6a8792;
+    text-underline-offset: 5px;
+    margin-bottom: 20px;
+}
+
+.content_list li a {
+    font-family: "Ahellya", sans-serif;
+    color: #333; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.line {
+    width: 90%;
+    height: 2px; 
+    margin-top: 0px;
+    background-color: #006c05;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: #006605;
+    font-family: "Times New Roman", sans-serif;
+
+    font-size: 50px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+p {
+    color: #666;
+}
