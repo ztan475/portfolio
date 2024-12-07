@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </li>
                 <li><a href="projects.html">PROJECTS</a></li>
                 <li><a href="games.html">GAMES</a></li>
+                <li><a href="music.html">MUSIC</a></li>
             </ul>
         </nav>
     `;
