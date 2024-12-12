@@ -10,25 +10,24 @@
     text-align: left;
 }
 
-.video-container {
+.video {
     width: 70%;
     aspect-ratio: 16 / 9;
     margin: 0 auto;
-    border: 5px solid #006c05;
-    border-radius: 10px;
-    padding: 0px;
+    padding: 5px;
     position: relative;
     overflow: hidden;
 }
 
-.video-container iframe {
+.video iframe {
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    border: 5px solid #006c05;
+    border-radius: 10px; 
+    box-sizing: border-box;
 }
 
-ul.recordings {
+ul.text-video {
     list-style-type: none;
     padding: 0;
     margin: 0 auto;

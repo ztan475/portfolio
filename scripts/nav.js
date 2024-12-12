@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 <li><b>Zachary Tan</b></li>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="games.html">GAMES</a></li>
                 <li><a class="writing">WRITING</a>
                     <ul class="dropdown">
                         <li><a href="short_stories.html">Short Stories</a></li>
                         <li><a href="poems.html">Poems</a></li>
                     </ul>
                 </li>
-                <li><a href="projects.html">PROJECTS</a></li>
-                <li><a href="games.html">GAMES</a></li>
                 <li><a href="music.html">MUSIC</a></li>
             </ul>
         </nav>
