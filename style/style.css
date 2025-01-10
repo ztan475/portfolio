@@ -34,6 +34,18 @@ body {
     color: #323232;
 }
 
+/* game list */
+.project_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.project_list li {
+    margin-bottom: 80px;
+    color: #323232;
+}
 /* generic list style */
 .content_list {
     list-style-type: none;
