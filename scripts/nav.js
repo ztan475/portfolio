@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <nav>
             <ul class="side_menu">
                 <li><b>Zachary Tan</b></li>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="index.html">ABOUT</a></li>
                 <li><a href="projects.html">PROJECTS</a></li>
                 <li><a href="games.html">GAMES</a></li>
                 <li><a class="writing">WRITING</a>
