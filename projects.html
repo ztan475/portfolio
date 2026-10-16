@@ -16,12 +16,166 @@
         <h1>Projects</h1>
         <ul class="project_list">
             <li>
-                <h2><a href="https://github.com/ztan475/Phival" target="_blank">Φval</a></h2>
-                <p>
+                <h2>
+                    <a href="https://github.com/aakanksha1dutta/adv-toolkit" target="_blank">Adversarial Robustness Toolkit</a>
+                    <a class = "secondary_link" href="files/projects/Adversarial_Robustness_Toolkit_Paper.pdf" target="_blank">Paper (pdf)</a>
+                </h2>
+                <div class="container">
+                    <div class="text">
+                        <p>
+                            Modern vision models score well on clean benchmarks but can be fooled by smaller perturbations. 
+                            Existing toolkits like ART and Foolbox are mostly built around white-box or query-heavy attacks, so this project 
+                            aimed to create a more robust way of testing models. It is a web-based tool that lets ML engineers stress-test a model 
+                            under a realistic black-box threat model, without target queries or local setup. Users upload a model and images, 
+                            optionally add a custom preprocessing config, then click a button to run an attack and receive a full robustness report.
+                        </p>
+                        <p>
+                            The toolkit is built around zero-query, transfer-based attacks. Perturbations are crafted on surrogate models and 
+                            applied to the target, so evaluation is fast and requires no access to the target's gradients or confidence scores. 
+                            The first attack is the Sine Attack, a frequency-domain method that represents each perturbation as channel-wise sinusoids 
+                            with just nine learnable parameters. It was trained on a Tiny-ImageNet subset against ResNet-18 and MobileNetV2 surrogates, 
+                            generates perturbations instantly at inference time, and reached fooling rates of 9.4% on ResNet-18 and 25.8% on MobileNetV2 
+                            on CIFAR-10. The second is a cross-domain generator based on the Beyond ImageNet Attack, which uses Random Normalization and 
+                            a Domain-Agnostic Attention Module so perturbations hold up across unknown preprocessing pipelines and data domains. Its 
+                            perturbations stay visually subtle (SSIM ≈ 0.996, PSNR ≈ 44 dB) and take a single 10-20 ms forward pass on GPU. An ensemble 
+                            strategy combines the two, so when one attack fails the other may still succeed.
+                        </p>
+                        <p>
+                            To make the tool practical for engineers without adversarial ML expertise, preprocessing steps such as Resize, CenterCrop, 
+                            and Normalize are specified in a JSON file rather than hard-coded into model code. The dashboard reports eight metrics: attack 
+                            success rate, clean accuracy, fooling rate, L0/L2/L∞ perturbation norms, and perceptual similarity (SSIM, PSNR, LPIPS). It also 
+                            shows side-by-side clean and adversarial images and offers downloadable JSON metrics and archives of adversarial examples.
+                        </p>
+                    </div>
+                    <div class="video">
+                        <video controls preload="metadata">
+                            <source src="files/projects/Toolkit_Project_Demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </li>
 
-                </p>
+
+            <li>
+                <h2>
+                    <a href="https://github.com/LuminousFirefly/claricare" target="_blank">ClariCare</a>
+                </h2>
+                <div class="container">
+                    <div class="text">
+                        <p>
+                            Health information is often hard for patients to understand, and remote monitoring tools tend to show isolated 
+                            numbers without context. ClariCare+ is an AI-driven healthcare platform that addresses both problems by turning 
+                            complex medical information into clear, actionable insights for patients and clinicians. It focuses on how a 
+                            patient's health changes over time instead of single measurements, with the goals of improving patient 
+                            comprehension, reducing preventable readmissions, and supporting informed clinical decisions.
+                        </p>
+                        <p>
+                            To improve health literacy, the platform translates clinician-provided instructions and medical terminology into 
+                            plain-language explanations, personalized using the patient's own health history. It also pulls in physiological 
+                            data from consumer wearables, including Apple Watch and Samsung Health, so vital signs can be monitored continuously 
+                            and analyzed as trends. AI-based summarization and trend models flag abnormal patterns relative to each patient's 
+                            individual baseline, not static population-wide thresholds.
+                        </p>
+                        <p>
+                            A dual-dashboard design keeps the two audiences separate. Patients get simplified summaries, while clinicians see 
+                            baseline-aware interpretations, deviation detection, and contextual alerts. 
+                        </p>
+                    </div>
+                    <div class="video height_limited">
+                        <video controls preload="metadata">
+                            <source src="files/projects/ClariCare_Demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </li>
+
+
+            <li>
+                <h2>
+                    <a href="https://github.com/ztan475/Phival" target="_blank">Φval</a>
+                    <a class = "secondary_link" href="files/projects/Phival_BLIP_Paper.pdf" target="_blank">Paper (pdf)</a>
+                </h2>
+                <div class="container">
+                    <div class="text">
+                        <p>
+                            Getting feedback on a photograph from a professional is expensive, slow, and subjective. Φval is an AI tool 
+                            that evaluates photos the way a photographer would, writing feedback on four criteria: content, color, 
+                            composition, and quality. I built it with a partner for a machine learning course, starting from BLIP, a 
+                            pre-trained vision-language model that normally produces only one-line image captions. We fine-tuned it on a 
+                            custom dataset of 514 photos, each paired with a written critique in all four categories, because no existing 
+                            dataset covered artistic evaluation.
+                        </p>
+                        <p>
+                            We compared four versions: the base BLIP model, a fine-tuned model, a fine-tuned model that sees images at 
+                            384x384 instead of 224x224 (about three times as much visual information), and a modified architecture with a 
+                            separate output layer for each criterion. The higher-resolution model performed best. It identified subjects 
+                            correctly and wrote fluent, detailed feedback, while the standard-resolution model misread a photo of mushrooms 
+                            as a bird. The four-output architecture performed worst, producing incoherent text, and a single general model 
+                            outperformed splitting the task into specialized ones. We scored the models with BLEU and ROUGE alongside human 
+                            review. Those metrics measure word overlap and not quality of feedback, so human judgment decided the ranking.
+                        </p>
+                        <p>
+                            The main limitation is the dataset. It leans toward food, animals, and landscapes, and most photos were 
+                            high-quality, so the model tends to give positive feedback. A larger and more varied dataset would help most. 
+                        </p>
+                    </div>
+                    <div class="video">
+                        <div class="frame">
+                            <iframe
+                                src="files/projects/Phival_Presentation.pdf#toolbar=0&navpanes=0&view=Fit"
+                                title="Φval presentation slides">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
             </li>
             
+
+            <li>
+                <h2>
+                    <a href="https://github.com/hjchoe/LNN-ATP/blob/master/RESEARCH/testing/test_bindings.py" target="_blank">Logical Neural Networks and Automated Theorem Provers</a>
+                </h2>
+                <div class="container">
+                    <div class="text">
+                        <p>
+                            Neural networks are powerful but act as black boxes, while classical theorem provers are transparent but rigid. 
+                            This project explores neuro-symbolic AI, which tries to combine the two. We worked with Logical Neural Networks 
+                            (LNNs), an IBM framework where each neuron is a logical operator (AND, OR, NOT, implies) and every statement 
+                            carries a lower and upper bound on its truth value. Inference runs in both directions through the network, 
+                            upward to compute a formula's truth from its parts and downward to deduce the parts from the formula, and repeats 
+                            until the bounds stop changing.
+                        </p>
+                        <p>
+                            We built an automated theorem prover on top of IBM's LNN library. Given a set of premises and a query, it first 
+                            tries a direct proof. If that doesn't settle the query, it tries a proof by contradiction, assuming the query is 
+                            false and checking whether the premises then conflict. It also detects inconsistent premises and reports when 
+                            the result is inconclusive. IBM's library records only raw bound updates, so we added a layer that translates each 
+                            inference into a named rule of logic, such as modus ponens, modus tollens, De Morgan's law, or conjunctive 
+                            elimination. The prover writes a readable, step-by-step proof ending in QED, and can also draw the model as a graph. 
+                            We tested it on classic arguments like the constructive dilemma, which it proves by contradiction in three 
+                            reasoning steps.
+                        </p>
+                        <p>
+                            We also documented gaps we found in the current LNN implementation, including missing laws of logical equivalence, 
+                            unclear behavior when variables are grounded in predicates with ForAll and Exists, and weak handling of 
+                            contradictory statements. These are the areas we identified for future work. 
+                            This was a team project (math and computer science students at the University of Rochester) for the STEMFORALL 
+                            program in summer 2024.
+                            <!-- Add your role here, e.g. "I built the proof printer and the contradiction-handling logic." -->
+                        </p>
+                    </div>
+                    <div class="video">
+                        <div class="frame">
+                            <iframe
+                                src="files/projects/ATP_Presentation.pdf#toolbar=0&navpanes=0&view=Fit"
+                                title="ATP presentation slides">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
             <li>
                 <h2><a href="https://github.com/ztan475/contradiction-parser" target="_blank">Detecting Logic in Natural Language</a></h2>
                 <p>
@@ -29,12 +183,6 @@
                 </p>
             </li>
 
-            <li>
-                <h2><a href="https://github.com/hjchoe/LNN-ATP/blob/master/RESEARCH/testing/test_bindings.py" target="_blank">Logical Neural Networks and Automated Theorem Provers</a></h2>
-                <p>
-                    
-                </p>
-            </li>
 
             <li>
                 <h2><a href="https://github.com/ztan475/c-disassembler" target="_blank">C to x86 Disassembler</a></h2>
@@ -45,7 +193,6 @@ returns a .html file that leads to a website that displays the mapping between s
             </li>
         </ul>
 
-        <div class="line" style="margin-top: 50px;"></div>
     </div>
 
     <script src="scripts/nav.js" defer></script>

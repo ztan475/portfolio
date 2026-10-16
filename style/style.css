@@ -106,6 +106,12 @@ h2 {
     color: #323232;
 }
 
+h2 .secondary_link {
+    display: block;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
 h3 {
     font-family: "Ahellya", sans-serif;
     font-size: 20px;
